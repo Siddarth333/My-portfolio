@@ -1,0 +1,2 @@
+ALTER TABLE public.media_items ADD COLUMN IF NOT EXISTS link_url text;
+ALTER TABLE public.media_items ADD CONSTRAINT media_items_link_url_valid CHECK (link_url IS NULL OR link_url ~ '^https?://' AND length(link_url) <= 2048);

@@ -1,0 +1,2 @@
+ALTER TABLE public.media_items DROP CONSTRAINT IF EXISTS media_items_category_check;
+ALTER TABLE public.media_items ADD CONSTRAINT media_items_category_check CHECK (category IN ('video','photo','song','travel'));
